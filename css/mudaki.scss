@@ -4,13 +4,52 @@
 
 .lp-header {
     width: 100%;
-    min-height: 689px;
-    background: $linear-blue;
     margin-bottom: 100px;
-    display: flex;
+    background: $linear-blue;
     position: relative;
+    overflow: hidden;
 
-    &::after{
+    @media screen and (max-width: 767px) {
+        background-size: 150%;
+        background-position: left bottom;
+    }
+
+
+    .grid {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1440px;
+        // min-height: 689px;
+        margin: 0 auto;
+
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+
+    .header-image {
+        // background: url(../assets/mudaki/header_Imaage_mudaki.jpg);
+        // background-size: contain;
+        // background-position: bottom;
+        height: 100%;
+        // background-repeat: no-repeat;
+
+        @media screen and (max-width: 767px) {
+            order: 2;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &::after {
         content: '';
         background: url(../assets/mudaki/waves_slice.svg);
         background-size: contain;
@@ -18,44 +57,49 @@
         bottom: 0;
         left: -20px;
         width: 120%;
-        height: 118px;
+        height: 15%;
         mix-blend-mode: multiply;
     }
 
 
     @media screen and (max-width: 767px) {
-        margin-bottom: 88px; 
+        margin-bottom: 88px;
         flex-direction: column;
     }
 
-    .main-image{
-        flex-grow: 0.5;
-        img{
-            width: 100%;
+    .header-text {
+        justify-self: start;
+
+        
+        @media screen and (max-width: 767px) {
+            justify-self: center;
         }
 
-        .waves{
-            position: absolute;
-            bottom: 0;
+
+        .main-text {
+            display: block;
+            position: relative;
+
+
+            @media screen and (max-width: 767px) {
+                padding: 25px 15px 0;
+            }
+
+            .main-text-svg {
+                .text-svg {
+                    margin: 0 auto;
+                    max-width: 100%;
+                }
+
+                .logo-svg {
+                    position: absolute;
+                    top: -160px;
+                    right: 0;
+                }
+            }
+
         }
     }
-
-    .main-text{
-        flex-grow: 0.5;
-        position: relative;
-
-        .text-svg{
-            transform: translateY(50%);
-        }
-        .kk_logo{
-            position: absolute;
-            top: 33px;
-            right: 49px;
-        }
-    }
-
-    
-
 
 }
 
@@ -74,7 +118,7 @@
     color: $white;
     margin-bottom: 103px;
     border-radius: 15px;
-   
+
 
     @media screen and (max-width: 767px) {
         padding: 62px 32px 38px;
@@ -87,7 +131,7 @@
         width: clamp(200px, 100%, 345px);
         position: relative;
 
-        svg{
+        svg {
             position: absolute;
             top: -70px;
             right: 0px;
@@ -99,6 +143,7 @@
 
             }
         }
+
         h4 {
             font-weight: 700;
             font-size: 38px;
@@ -108,7 +153,8 @@
 
             @media screen and (max-width: 767px) {
                 width: 90%;
-                font-size: 33px;;
+                font-size: 33px;
+                ;
 
             }
         }
@@ -121,7 +167,7 @@
 
     .lp-newsletter-form {
         flex-grow: 1;
-        
+
 
         form {
             display: flex;
@@ -300,7 +346,7 @@
         margin-bottom: 40px;
     }
 
-    h2 {
+    h2.lp-title {
         font-family: $DM-Sans;
         font-weight: 500;
         font-size: 30px;
@@ -324,3 +370,25 @@
     }
 }
 
+.lp-primary{
+    font-family: $DM-Sans;
+    font-size: 18px;
+    background-color: $yellow;
+    padding: 15px 55px;
+    border: none;
+    color: $white;
+    border-radius: 23px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @media screen and (max-width: 1024px){
+        padding: 8px 30px;
+    }
+
+    @media screen and (max-width: 767px){
+        display: block;
+        margin: 0 auto;
+        padding: 8px 30px;
+        margin-top: 20px;
+    }
+}

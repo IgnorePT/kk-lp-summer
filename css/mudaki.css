@@ -21,14 +21,56 @@ p {
 
 .lp-header {
   width: 100%;
-  min-height: 689px;
+  margin-bottom: 100px;
   background: -webkit-gradient(linear, left top, left bottom, from(#7FEDFC), color-stop(50%, #7FEDFC), color-stop(72.92%, #80EDFD), to(#91F3FF));
   background: linear-gradient(180deg, #7FEDFC 0%, #7FEDFC 50%, #80EDFD 72.92%, #91F3FF 100%);
-  margin-bottom: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header {
+    background-size: 150%;
+    background-position: left bottom;
+  }
+}
+
+.lp-header .grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.lp-header .header-image {
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header .header-image {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.lp-header .header-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .lp-header::after {
@@ -39,7 +81,7 @@ p {
   bottom: 0;
   left: -20px;
   width: 120%;
-  height: 118px;
+  height: 15%;
   mix-blend-mode: multiply;
 }
 
@@ -53,37 +95,38 @@ p {
   }
 }
 
-.lp-header .main-image {
-  -webkit-box-flex: 0.5;
-      -ms-flex-positive: 0.5;
-          flex-grow: 0.5;
+.lp-header .header-text {
+  -ms-grid-column-align: start;
+      justify-self: start;
 }
 
-.lp-header .main-image img {
-  width: 100%;
+@media screen and (max-width: 767px) {
+  .lp-header .header-text {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 
-.lp-header .main-image .waves {
-  position: absolute;
-  bottom: 0;
-}
-
-.lp-header .main-text {
-  -webkit-box-flex: 0.5;
-      -ms-flex-positive: 0.5;
-          flex-grow: 0.5;
+.lp-header .header-text .main-text {
+  display: block;
   position: relative;
 }
 
-.lp-header .main-text .text-svg {
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
+@media screen and (max-width: 767px) {
+  .lp-header .header-text .main-text {
+    padding: 25px 15px 0;
+  }
 }
 
-.lp-header .main-text .kk_logo {
+.lp-header .header-text .main-text .main-text-svg .text-svg {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.lp-header .header-text .main-text .main-text-svg .logo-svg {
   position: absolute;
-  top: 33px;
-  right: 49px;
+  top: -160px;
+  right: 0;
 }
 
 .lp-content {
@@ -424,7 +467,7 @@ p {
   }
 }
 
-.lp-title-group h2 {
+.lp-title-group h2.lp-title {
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
   font-size: 30px;
@@ -432,7 +475,7 @@ p {
 }
 
 @media screen and (max-width: 767px) {
-  .lp-title-group h2 {
+  .lp-title-group h2.lp-title {
     font-size: 25px;
   }
 }
@@ -448,6 +491,33 @@ p {
   .lp-title-group p {
     font-size: 16px;
     line-height: 21px;
+  }
+}
+
+.lp-primary {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  background-color: #FFC641;
+  padding: 15px 55px;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 23px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+  .lp-primary {
+    padding: 8px 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lp-primary {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 30px;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=mudaki.css.map */
