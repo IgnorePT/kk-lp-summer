@@ -33,8 +33,8 @@ p {
 .lp-header-estacao .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.9fr 1.1fr;
 }
 
 @media screen and (max-width: 767px) {
@@ -50,17 +50,36 @@ p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  padding: 25px;
+  padding: 25px 25px 25px 80px;
 }
 
 @media screen and (max-width: 767px) {
   .lp-header-estacao .grid .header-text {
     padding: 70px 25px 40px;
+    width: 100%;
   }
 }
 
 .lp-header-estacao .grid .header-text .main-text {
   margin-bottom: 52px;
+}
+
+.lp-header-estacao .grid .header-text .main-text .main-text-svg picture {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header-estacao .grid .header-text .main-text .main-text-svg picture {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .lp-header-estacao .grid .header-text .main-text img {
@@ -76,11 +95,12 @@ p {
 }
 
 .lp-header-estacao .header-image .floating-logo {
-  top: 57px;
+  top: 3%;
   left: 0;
   position: absolute;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  max-width: 20%;
 }
 
 @media screen and (max-width: 767px) {
@@ -103,6 +123,93 @@ p {
 
 @media screen and (max-width: 767px) {
   .lp-header-estacao .header-image {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.lp-header-bola-berlim {
+  overflow: hidden;
+  margin-bottom: 100px;
+  background: #83E098;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header-bola-berlim {
+    margin-bottom: 88px;
+  }
+}
+
+.lp-header-bola-berlim .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.6fr 0.4fr;
+      grid-template-columns: 0.6fr 0.4fr;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header-bola-berlim .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.lp-header-bola-berlim .grid .header-text {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 25px 25px 25px 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header-bola-berlim .grid .header-text {
+    padding: 70px 25px 40px;
+    width: 100%;
+  }
+}
+
+.lp-header-bola-berlim .grid .header-text .main-text {
+  margin-bottom: 52px;
+}
+
+.lp-header-bola-berlim .grid .header-text .main-text .main-text-svg picture {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header-bola-berlim .grid .header-text .main-text .main-text-svg picture {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.lp-header-bola-berlim .grid .header-text .main-text img {
+  max-width: 100%;
+}
+
+.lp-header-bola-berlim .header-image {
+  position: relative;
+}
+
+.lp-header-bola-berlim .header-image .main-image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 304px;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-header-bola-berlim .header-image {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
@@ -601,9 +708,19 @@ p {
   font-weight: 700;
 }
 
-.lp-primary.btn_center {
-  display: block;
-  margin: 0 auto;
+.lp-primary.green {
+  background-color: #83E098;
+}
+
+.lp-primary.primary {
+  background-color: #F15A24;
+}
+
+@media screen and (max-width: 767px) {
+  .lp-primary.btn_center {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -634,6 +751,16 @@ p {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.lp-grid-images .lp-images-group a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.lp-grid-images .lp-images-group a:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 .lp-grid-images .lp-images-group a img {
