@@ -23,7 +23,7 @@
             justify-self: end;
             align-self: center;
             padding: 25px 25px 25px 80px;
-            
+
             @media screen and (max-width: 767px) {
                 padding: 70px 25px 40px;
                 width: 100%;
@@ -32,8 +32,8 @@
             .main-text {
                 margin-bottom: 52px;
 
-                .main-text-svg{
-                    picture{
+                .main-text-svg {
+                    picture {
                         width: 100%;
                         display: flex;
                         justify-content: end;
@@ -44,6 +44,7 @@
 
                     }
                 }
+
                 img {
                     max-width: 100%;
                 }
@@ -108,7 +109,7 @@
             justify-self: start;
             align-self: center;
             padding: 70px 65px 50px;
-            
+
             @media screen and (max-width: 767px) {
                 padding: 70px 25px 40px;
                 width: 100%;
@@ -117,8 +118,8 @@
             .main-text {
                 margin-bottom: 52px;
 
-                .main-text-svg{
-                    picture{
+                .main-text-svg {
+                    picture {
                         width: 100%;
                         display: flex;
                         justify-content: start;
@@ -129,6 +130,7 @@
 
                     }
                 }
+
                 img {
                     max-width: 100%;
                 }
@@ -531,11 +533,11 @@
     text-transform: uppercase;
     font-weight: 700;
 
-    &.green{
+    &.green {
         background-color: $green;
     }
 
-    &.primary{
+    &.primary {
         background-color: $primary;
     }
 
@@ -570,9 +572,11 @@
 
         a {
             transition: all 0.3s;
-            &:hover{
+
+            &:hover {
                 transform: scale(1.04);
             }
+
             img {
                 width: 100%;
                 height: 100%;
