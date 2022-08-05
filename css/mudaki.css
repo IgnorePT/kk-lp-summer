@@ -340,9 +340,9 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #FFFFFF;
   margin-bottom: 103px;
   border-radius: 15px;
@@ -359,29 +359,40 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 .lp-newsletter .lp-newsletter-title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.lp-newsletter .lp-newsletter-title .title {
   width: clamp(200px, 100%, 345px);
   position: relative;
 }
 
-.lp-newsletter .lp-newsletter-title svg {
+.lp-newsletter .lp-newsletter-title .title svg {
   position: absolute;
   top: -70px;
   right: 0px;
 }
 
 @media screen and (max-width: 767px) {
-  .lp-newsletter .lp-newsletter-title svg {
+  .lp-newsletter .lp-newsletter-title .title svg {
     max-width: 82px;
     top: -70px;
     right: -33px;
   }
 }
 
-.lp-newsletter .lp-newsletter-title h4 {
+.lp-newsletter .lp-newsletter-title .title h4 {
   font-weight: 700;
   font-size: 38px;
   line-height: 110%;
@@ -390,13 +401,13 @@ p {
 }
 
 @media screen and (max-width: 767px) {
-  .lp-newsletter .lp-newsletter-title h4 {
+  .lp-newsletter .lp-newsletter-title .title h4 {
     width: 85%;
     font-size: 33px;
   }
 }
 
-.lp-newsletter .lp-newsletter-title p {
+.lp-newsletter .lp-newsletter-title .title p {
   font-size: 18px;
   line-height: 23px;
 }
@@ -405,6 +416,8 @@ p {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .lp-newsletter .lp-newsletter-form form {
