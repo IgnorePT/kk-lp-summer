@@ -1,945 +1,1013 @@
 <style type="text/css">
-    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0;
-        padding: 0;
-        font-family: "DM Sans", sans-serif;
-    }
-
-    p {
-        font-family: "DM Sans", sans-serif;
-    }
-
-    .lp-header-estacao {
-        overflow: hidden;
-        margin-bottom: 100px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-estacao {
-            margin-bottom: 88px;
-        }
-    }
-
-    .lp-header-estacao .grid {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 0.9fr 1.1fr;
-        grid-template-columns: 0.9fr 1.1fr;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-estacao .grid {
-            -ms-grid-columns: 1fr;
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .lp-header-estacao .grid .header-text {
-        -ms-grid-column-align: end;
-        justify-self: end;
-        -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-        padding: 25px 25px 25px 80px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-estacao .grid .header-text {
-            padding: 70px 25px 40px;
-            width: 100%;
-        }
-    }
-
-    .lp-header-estacao .grid .header-text .main-text {
-        margin-bottom: 52px;
-    }
-
-    .lp-header-estacao .grid .header-text .main-text .main-text-svg picture {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: end;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-estacao .grid .header-text .main-text .main-text-svg picture {
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-    }
-
-    .lp-header-estacao .grid .header-text .main-text img {
-        max-width: 100%;
-    }
-
-    .lp-header-estacao.estacao_solar {
-        background: #7844E3;
-    }
-
-    .lp-header-estacao .header-image {
-        position: relative;
-    }
-
-    .lp-header-estacao .header-image .floating-logo {
-        top: 3%;
-        left: 0;
-        position: absolute;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        max-width: 20%;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-estacao .header-image .floating-logo {
-            max-width: 156px;
-            top: auto;
-            bottom: 0;
-            left: auto;
-            right: 0;
-            -webkit-transform: translateY(50%);
-            transform: translateY(50%);
-        }
-    }
-
-    .lp-header-estacao .header-image .main-image {
-        width: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-estacao .header-image {
-            -webkit-box-ordinal-group: 0;
-            -ms-flex-order: -1;
-            order: -1;
-        }
-    }
-
-    .lp-header-bola-berlim {
-        overflow: hidden;
-        margin-bottom: 100px;
-        background: #83E098;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-bola-berlim {
-            margin-bottom: 88px;
-        }
-    }
-
-    .lp-header-bola-berlim .grid {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 0.6fr 0.4fr;
-        grid-template-columns: 0.6fr 0.4fr;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-bola-berlim .grid {
-            -ms-grid-columns: 1fr;
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .lp-header-bola-berlim .grid .header-text {
-        -ms-grid-column-align: start;
-        justify-self: start;
-        -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-        padding: 70px 65px 50px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-bola-berlim .grid .header-text {
-            padding: 70px 25px 40px;
-            width: 100%;
-        }
-    }
-
-    .lp-header-bola-berlim .grid .header-text .main-text {
-        margin-bottom: 52px;
-    }
-
-    .lp-header-bola-berlim .grid .header-text .main-text .main-text-svg picture {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: start;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header-bola-berlim .grid .header-text .main-text .main-text-svg picture {
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-    }
-
-    .lp-header-bola-berlim .grid .header-text .main-text img {
-        max-width: 100%;
-    }
-
-    .lp-header-bola-berlim .header-image {
-        position: relative;
-    }
-
-    .lp-header-bola-berlim .header-image .main-image {
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-        min-height: 304px;
-    }
-
-    .lp-header {
-        width: 100%;
-        margin-bottom: 100px;
-        background: -webkit-gradient(linear, left top, left bottom, from(#7FEDFC), color-stop(50%, #7FEDFC), color-stop(72.92%, #80EDFD), to(#91F3FF));
-        background: linear-gradient(180deg, #7FEDFC 0%, #7FEDFC 50%, #80EDFD 72.92%, #91F3FF 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header {
-            background-size: 150%;
-            background-position: left bottom;
-        }
-    }
-
-    .lp-header .grid {
-        display: -ms-grid;
-        display: grid;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        max-width: 1440px;
-        margin: 0 auto;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header .grid {
-            -ms-grid-columns: 1fr;
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .lp-header .header-image {
-        height: 100%;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header .header-image {
-            -webkit-box-ordinal-group: 3;
-            -ms-flex-order: 2;
-            order: 2;
-        }
-    }
-
-    .lp-header .header-image img {
-        width: 100%;
-        height: 100%;
-        -o-object-fit: contain;
-        object-fit: contain;
-    }
-
-    .lp-header::after {
-        content: '';
-        background: url(../assets/mudaki/waves_slice.svg);
-        background-size: contain;
-        position: absolute;
-        bottom: 0;
-        left: -20px;
-        width: 120%;
-        height: 15%;
-        mix-blend-mode: multiply;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header {
-            margin-bottom: 88px;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-        }
-    }
-
-    .lp-header .header-text {
-        -ms-grid-column-align: start;
-        justify-self: start;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header .header-text {
-            -ms-grid-column-align: center;
-            justify-self: center;
-        }
-    }
-
-    .lp-header .header-text .main-text {
-        display: block;
-        position: relative;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-header .header-text .main-text {
-            padding: 25px 15px 0;
-        }
-    }
-
-    .lp-header .header-text .main-text .main-text-svg .text-svg {
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    .lp-header .header-text .main-text .main-text-svg .logo-svg {
-        position: absolute;
-        top: -160px;
-        right: 0;
-    }
-
-    .lp-content {
-        max-width: 1108px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .lp-newsletter {
-        background: #F15A24;
-        padding: 62px 62px 45px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        color: #FFFFFF;
-        margin-bottom: 103px;
-        border-radius: 15px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-newsletter {
-            padding: 62px 32px 38px;
-            -webkit-box-align: stretch;
-            -ms-flex-align: stretch;
-            align-items: stretch;
-            max-width: calc(100% - 40px);
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-    }
-
-    .lp-newsletter .lp-newsletter-title {
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-    }
-
-    .lp-newsletter .lp-newsletter-title .title {
-        width: clamp(200px, 100%, 345px);
-        position: relative;
-    }
-
-    .lp-newsletter .lp-newsletter-title .title svg {
-        position: absolute;
-        top: -70px;
-        right: 0px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-newsletter .lp-newsletter-title .title svg {
-            max-width: 82px;
-            top: -70px;
-            right: -33px;
-        }
-    }
-
-    .lp-newsletter .lp-newsletter-title .title h4 {
-        font-weight: 700;
-        font-size: 38px;
-        line-height: 110%;
-        color: #FFC641;
-        width: 80%;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-newsletter .lp-newsletter-title .title h4 {
-            width: 85%;
-            font-size: 33px;
-        }
-    }
-
-    .lp-newsletter .lp-newsletter-title .title p {
-        font-size: 18px;
-        line-height: 23px;
-    }
-
-    .lp-newsletter .lp-newsletter-form {
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-    }
-
-    .lp-newsletter .lp-newsletter-form form {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: end;
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
-        gap: 25px;
-    }
-
-    .lp-newsletter .lp-newsletter-form form input {
-        background: #FFFFFF;
-        width: clamp(150px, 100%, 490px);
-        padding: 12px 36px 8px;
-        border: none;
-        border-radius: 59px;
-        font-family: "DM Sans", sans-serif;
-        color: #000000;
-        font-size: 18px;
-        line-height: 23px;
-        font-weight: 700;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-newsletter .lp-newsletter-form form input {
-            font-size: 15px;
-            padding: 8px 12px;
-        }
-    }
-
-    .lp-newsletter .lp-newsletter-form form ::-webkit-input-placeholder {
-        font-family: "DM Sans", sans-serif;
-        color: #F15A24;
-        opacity: 0.3;
-        font-size: 18px;
-        line-height: 23px;
-        font-weight: 700;
-    }
-
-    .lp-newsletter .lp-newsletter-form form :-ms-input-placeholder {
-        font-family: "DM Sans", sans-serif;
-        color: #F15A24;
-        opacity: 0.3;
-        font-size: 18px;
-        line-height: 23px;
-        font-weight: 700;
-    }
-
-    .lp-newsletter .lp-newsletter-form form ::-ms-input-placeholder {
-        font-family: "DM Sans", sans-serif;
-        color: #F15A24;
-        opacity: 0.3;
-        font-size: 18px;
-        line-height: 23px;
-        font-weight: 700;
-    }
-
-    .lp-newsletter .lp-newsletter-form form ::placeholder {
-        font-family: "DM Sans", sans-serif;
-        color: #F15A24;
-        opacity: 0.3;
-        font-size: 18px;
-        line-height: 23px;
-        font-weight: 700;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-newsletter .lp-newsletter-form form ::-webkit-input-placeholder {
-            font-size: 15px;
-        }
-
-        .lp-newsletter .lp-newsletter-form form :-ms-input-placeholder {
-            font-size: 15px;
-        }
-
-        .lp-newsletter .lp-newsletter-form form ::-ms-input-placeholder {
-            font-size: 15px;
-        }
-
-        .lp-newsletter .lp-newsletter-form form ::placeholder {
-            font-size: 15px;
-        }
-    }
-
-    .lp-newsletter .lp-newsletter-form form button {
-        width: clamp(188px, 100%, 209px);
-        background: #FFC641;
-        color: #FFFFFF;
-        text-align: center;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 91.2%;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-newsletter .lp-newsletter-form form button {
-            padding: 14px 32px;
-            font-size: 16px;
-        }
-    }
-
-    .lp-big-images {
-        margin-bottom: 114px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-big-images {
-            margin-bottom: 88px;
-        }
-    }
-
-    .lp-big-images .lp-images-group {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 20px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-big-images .lp-images-group {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-        }
-    }
-
-    .lp-big-images .lp-images-group a img {
-        width: 100%;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-    }
-
-    .lp-big-images .lp-images-group a:hover img {
-        -webkit-transform: scale(1.04);
-        transform: scale(1.04);
-    }
-
-    .lp-product-carrousel {
-        padding: 0 0 0 20px;
-        margin-bottom: 140px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-product-carrousel {
-            margin-bottom: 88px;
-        }
-    }
-
-    .lp-product-carrousel .carrousel {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        gap: 20px;
-        padding: 20px;
-        overflow-y: auto;
-        -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .lp-product-carrousel .carrousel::-webkit-scrollbar {
-        display: none;
-    }
-
-    .lp-product-carrousel .carrousel .lp-product-card {
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        -ms-flex-negative: 1;
-        flex-shrink: 1;
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        text-decoration: none;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        background: #F9F9F9;
-        padding: 40px 16px;
-        border-radius: 15px;
-        gap: 12px;
-        text-align: center;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        width: 100%;
-        scroll-snap-align: center;
-    }
-
-    .lp-product-carrousel .carrousel .lp-product-card:last-child {
-        margin-right: 20px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-product-carrousel .carrousel .lp-product-card {
-            min-height: 360px;
-            min-width: 262px;
-        }
-    }
-
-    .lp-product-carrousel .carrousel .lp-product-card .lp-product-image {
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-
-    .lp-product-carrousel .carrousel .lp-product-card .lp-product-image img {
-        width: 100%;
-        mix-blend-mode: multiply;
-    }
-
-    .lp-product-carrousel .carrousel .lp-product-card h4 {
-        color: #000000;
-        font-family: "DM Sans", sans-serif;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 130%;
-        overflow-wrap: anywhere;
-    }
-
-    .lp-product-carrousel .carrousel .lp-product-card:hover {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .lp-title-group {
-        margin-bottom: 45px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-title-group {
-            margin-bottom: 40px;
-        }
-    }
-
-    .lp-title-group h2.lp-title {
-        font-family: "DM Sans", sans-serif;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 100.2%;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-title-group h2.lp-title {
-            font-size: 25px;
-        }
-    }
-
-    .lp-title-group p {
-        font-family: "DM Sans", sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 26px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-title-group p {
-            font-size: 16px;
-            line-height: 21px;
-        }
-    }
-
-    .lp-primary {
-        font-family: "DM Sans", sans-serif;
-        font-size: 18px;
-        background-color: #FFC641;
-        padding: 15px 55px;
-        border: none;
-        color: #FFFFFF;
-        border-radius: 23px;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-
-    .lp-primary.green {
-        background-color: #83E098;
-    }
-
-    .lp-primary.primary {
-        background-color: #F15A24;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-primary.btn_center {
-            display: block;
-            margin: 0 auto;
-        }
-    }
-
-    @media screen and (max-width: 1024px) {
-        .lp-primary {
-            padding: 8px 30px;
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-primary {
-            padding: 8px 30px;
-        }
-    }
-
-    .lp-grid-images {
-        margin-bottom: 114px;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-grid-images {
-            margin-bottom: 88px;
-        }
-    }
-
-    .lp-grid-images .lp-images-group {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .lp-grid-images .lp-images-group a {
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-    }
-
-    .lp-grid-images .lp-images-group a:hover {
-        -webkit-transform: scale(1.04);
-        transform: scale(1.04);
-    }
-
-    .lp-grid-images .lp-images-group a img {
-        width: 100%;
-        height: 100%;
-    }
-
-    @media screen and (max-width: 767px) {
-        .lp-grid-images .lp-images-group {
-            -ms-grid-columns: 1fr;
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media screen and (min-width: 768px) {
-        .lp-grid-images .lp-images-group .big-image {
-            -ms-grid-column: 1;
-            grid-column-start: 1;
-            grid-column-end: 2;
-            -ms-grid-row-span: 2;
-            grid-row-end: span 2;
-        }
-
-        .lp-grid-images .lp-images-group .small-image {
-            -ms-grid-column: 2;
-            grid-column-start: 2;
-            grid-column-end: 3;
-            -ms-grid-row-span: 1;
-            grid-row-end: span 1;
-        }
-    }
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	font-family: "DM Sans", sans-serif;
+}
+
+p {
+	font-family: "DM Sans", sans-serif;
+}
+
+.lp-header-estacao {
+	overflow: hidden;
+	margin-bottom: 100px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-estacao {
+		margin-bottom: 88px;
+	}
+}
+
+.lp-header-estacao .grid {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 0.9fr 1.1fr;
+	grid-template-columns: 0.9fr 1.1fr;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-estacao .grid {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+
+.lp-header-estacao .grid .header-text {
+	-ms-grid-column-align: end;
+	justify-self: end;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+	padding: 25px 25px 25px 80px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-estacao .grid .header-text {
+		padding: 70px 25px 40px;
+		width: 100%;
+	}
+}
+
+.lp-header-estacao .grid .header-text .main-text {
+	margin-bottom: 52px;
+}
+
+.lp-header-estacao .grid .header-text .main-text .main-text-svg picture {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-estacao .grid .header-text .main-text .main-text-svg picture {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+}
+
+.lp-header-estacao .grid .header-text .main-text img {
+	max-width: 100%;
+}
+
+.lp-header-estacao.estacao_solar {
+	background: #7844e3;
+}
+
+.lp-header-estacao .header-image {
+	position: relative;
+}
+
+.lp-header-estacao .header-image .floating-logo {
+	top: 3%;
+	left: 0;
+	position: absolute;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	max-width: 20%;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-estacao .header-image .floating-logo {
+		max-width: 156px;
+		top: auto;
+		bottom: 0;
+		left: auto;
+		right: 0;
+		-webkit-transform: translateY(50%);
+		transform: translateY(50%);
+	}
+}
+
+.lp-header-estacao .header-image .main-image {
+	width: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-estacao .header-image {
+		-webkit-box-ordinal-group: 0;
+		-ms-flex-order: -1;
+		order: -1;
+	}
+}
+
+.lp-header-bola-berlim {
+	overflow: hidden;
+	margin-bottom: 100px;
+	background: #83e098;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-bola-berlim {
+		margin-bottom: 88px;
+	}
+}
+
+.lp-header-bola-berlim .grid {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 0.6fr 0.4fr;
+	grid-template-columns: 0.6fr 0.4fr;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-bola-berlim .grid {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+
+.lp-header-bola-berlim .grid .header-text {
+	-ms-grid-column-align: start;
+	justify-self: start;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+	padding: 70px 65px 50px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-bola-berlim .grid .header-text {
+		padding: 70px 25px 40px;
+		width: 100%;
+	}
+}
+
+.lp-header-bola-berlim .grid .header-text .main-text {
+	margin-bottom: 52px;
+}
+
+.lp-header-bola-berlim .grid .header-text .main-text .main-text-svg picture {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: start;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header-bola-berlim .grid .header-text .main-text .main-text-svg picture {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+}
+
+.lp-header-bola-berlim .grid .header-text .main-text img {
+	max-width: 100%;
+}
+
+.lp-header-bola-berlim .header-image {
+	position: relative;
+}
+
+.lp-header-bola-berlim .header-image .main-image {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	min-height: 304px;
+}
+
+.lp-header {
+	width: 100%;
+	margin-bottom: 100px;
+	background: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(#7fedfc),
+		color-stop(50%, #7fedfc),
+		color-stop(72.92%, #80edfd),
+		to(#91f3ff)
+	);
+	background: linear-gradient(
+		180deg,
+		#7fedfc 0%,
+		#7fedfc 50%,
+		#80edfd 72.92%,
+		#91f3ff 100%
+	);
+	position: relative;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header {
+		background-size: 150%;
+		background-position: left bottom;
+	}
+}
+
+.lp-header .grid {
+	display: -ms-grid;
+	display: grid;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-grid-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header .grid {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+
+.lp-header .header-image {
+	height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header .header-image {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 2;
+		order: 2;
+	}
+}
+
+.lp-header .header-image img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: contain;
+	object-fit: contain;
+}
+
+.lp-header::after {
+	content: "";
+	background: url(https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/waves_slice.svg);
+	background-size: contain;
+	position: absolute;
+	bottom: 0;
+	left: -20px;
+	width: 120%;
+	height: 15%;
+	mix-blend-mode: multiply;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header {
+		margin-bottom: 88px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+.lp-header .header-text {
+	-ms-grid-column-align: start;
+	justify-self: start;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header .header-text {
+		-ms-grid-column-align: center;
+		justify-self: center;
+	}
+}
+
+.lp-header .header-text .main-text {
+	display: block;
+	position: relative;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-header .header-text .main-text {
+		padding: 25px 15px 0;
+	}
+}
+
+.lp-header .header-text .main-text .main-text-svg .text-svg {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+.lp-header .header-text .main-text .main-text-svg .logo-svg {
+	position: absolute;
+	top: -160px;
+	right: 0;
+}
+
+.lp-content {
+	max-width: 1108px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.lp-newsletter {
+	background: #f15a24;
+	padding: 62px 62px 45px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #ffffff;
+	margin-bottom: 103px;
+	border-radius: 15px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-newsletter {
+		padding: 62px 32px 38px;
+		-webkit-box-align: stretch;
+		-ms-flex-align: stretch;
+		align-items: stretch;
+		max-width: calc(100% - 40px);
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+}
+
+.lp-newsletter .lp-newsletter-title {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+}
+
+.lp-newsletter .lp-newsletter-title .title {
+	width: clamp(200px, 100%, 345px);
+	position: relative;
+}
+
+.lp-newsletter .lp-newsletter-title .title svg {
+	position: absolute;
+	top: -70px;
+	right: 0px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-newsletter .lp-newsletter-title .title svg {
+		max-width: 82px;
+		top: -70px;
+		right: -33px;
+	}
+}
+
+.lp-newsletter .lp-newsletter-title .title h4 {
+	font-weight: 700;
+	font-size: 38px;
+	line-height: 110%;
+	color: #ffc641;
+	width: 80%;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-newsletter .lp-newsletter-title .title h4 {
+		width: 85%;
+		font-size: 33px;
+	}
+}
+
+.lp-newsletter .lp-newsletter-title .title p {
+	font-size: 18px;
+	line-height: 23px;
+}
+
+.lp-newsletter .lp-newsletter-form {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+}
+
+.lp-newsletter .lp-newsletter-form form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: end;
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	gap: 25px;
+}
+
+.lp-newsletter .lp-newsletter-form form input {
+	background: #ffffff;
+	width: clamp(150px, 100%, 490px);
+	padding: 12px 36px 8px;
+	border: none;
+	border-radius: 59px;
+	font-family: "DM Sans", sans-serif;
+	color: #000000;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-newsletter .lp-newsletter-form form input {
+		font-size: 15px;
+		padding: 8px 12px;
+	}
+}
+
+.lp-newsletter .lp-newsletter-form form ::-webkit-input-placeholder {
+	font-family: "DM Sans", sans-serif;
+	color: #f15a24;
+	opacity: 0.3;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: 700;
+}
+
+.lp-newsletter .lp-newsletter-form form :-ms-input-placeholder {
+	font-family: "DM Sans", sans-serif;
+	color: #f15a24;
+	opacity: 0.3;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: 700;
+}
+
+.lp-newsletter .lp-newsletter-form form ::-ms-input-placeholder {
+	font-family: "DM Sans", sans-serif;
+	color: #f15a24;
+	opacity: 0.3;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: 700;
+}
+
+.lp-newsletter .lp-newsletter-form form ::placeholder {
+	font-family: "DM Sans", sans-serif;
+	color: #f15a24;
+	opacity: 0.3;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: 700;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-newsletter .lp-newsletter-form form ::-webkit-input-placeholder {
+		font-size: 15px;
+	}
+	.lp-newsletter .lp-newsletter-form form :-ms-input-placeholder {
+		font-size: 15px;
+	}
+	.lp-newsletter .lp-newsletter-form form ::-ms-input-placeholder {
+		font-size: 15px;
+	}
+	.lp-newsletter .lp-newsletter-form form ::placeholder {
+		font-size: 15px;
+	}
+}
+
+.lp-newsletter .lp-newsletter-form form button {
+	width: clamp(188px, 100%, 209px);
+	background: #ffc641;
+	color: #ffffff;
+	text-align: center;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 30px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 91.2%;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-newsletter .lp-newsletter-form form button {
+		padding: 14px 32px;
+		font-size: 16px;
+	}
+}
+
+.lp-big-images {
+	margin-bottom: 114px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-big-images {
+		margin-bottom: 88px;
+	}
+}
+
+.lp-big-images .lp-images-group {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-big-images .lp-images-group {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
+
+.lp-big-images .lp-images-group a img {
+	width: 100%;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.lp-big-images .lp-images-group a:hover img {
+	-webkit-transform: scale(1.04);
+	transform: scale(1.04);
+}
+
+.lp-product-carrousel {
+	padding: 0 0 0 20px;
+	margin-bottom: 140px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-product-carrousel {
+		margin-bottom: 88px;
+	}
+}
+
+.lp-product-carrousel .carrousel {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	overflow-y: auto;
+	-ms-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.lp-product-carrousel .carrousel::-webkit-scrollbar {
+	display: none;
+}
+
+.lp-product-carrousel .carrousel .lp-product-card {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	-ms-flex-negative: 1;
+	flex-shrink: 1;
+	-ms-flex-preferred-size: 0;
+	flex-basis: 0;
+	text-decoration: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	background: #f9f9f9;
+	padding: 40px 16px;
+	border-radius: 15px;
+	gap: 12px;
+	text-align: center;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 100%;
+	scroll-snap-align: center;
+}
+
+.lp-product-carrousel .carrousel .lp-product-card:last-child {
+	margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-product-carrousel .carrousel .lp-product-card {
+		min-height: 360px;
+		min-width: 262px;
+	}
+}
+
+.lp-product-carrousel .carrousel .lp-product-card .lp-product-image {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.lp-product-carrousel .carrousel .lp-product-card .lp-product-image img {
+	width: 100%;
+	mix-blend-mode: multiply;
+}
+
+.lp-product-carrousel .carrousel .lp-product-card h4 {
+	color: #000000;
+	font-family: "DM Sans", sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 130%;
+	overflow-wrap: anywhere;
+}
+
+.lp-product-carrousel .carrousel .lp-product-card:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.lp-title-group {
+	margin-bottom: 45px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-title-group {
+		margin-bottom: 40px;
+	}
+}
+
+.lp-title-group h2.lp-title {
+	font-family: "DM Sans", sans-serif;
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 100.2%;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-title-group h2.lp-title {
+		font-size: 25px;
+	}
+}
+
+.lp-title-group p {
+	font-family: "DM Sans", sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 26px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-title-group p {
+		font-size: 16px;
+		line-height: 21px;
+	}
+}
+
+.lp-primary {
+	font-family: "DM Sans", sans-serif;
+	font-size: 18px;
+	background-color: #ffc641;
+	padding: 15px 55px;
+	border: none;
+	color: #ffffff;
+	border-radius: 23px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.lp-primary.green {
+	background-color: #83e098;
+}
+
+.lp-primary.primary {
+	background-color: #f15a24;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-primary.btn_center {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.lp-primary {
+		padding: 8px 30px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.lp-primary {
+		padding: 8px 30px;
+	}
+}
+
+.lp-grid-images {
+	margin-bottom: 114px;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-grid-images {
+		margin-bottom: 88px;
+	}
+}
+
+.lp-grid-images .lp-images-group {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.lp-grid-images .lp-images-group a {
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.lp-grid-images .lp-images-group a:hover {
+	-webkit-transform: scale(1.04);
+	transform: scale(1.04);
+}
+
+.lp-grid-images .lp-images-group a img {
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+	.lp-grid-images .lp-images-group {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.lp-grid-images .lp-images-group .big-image {
+		-ms-grid-column: 1;
+		grid-column-start: 1;
+		grid-column-end: 2;
+		-ms-grid-row-span: 2;
+		grid-row-end: span 2;
+	}
+	.lp-grid-images .lp-images-group .small-image {
+		-ms-grid-column: 2;
+		grid-column-start: 2;
+		grid-column-end: 3;
+		-ms-grid-row-span: 1;
+		grid-row-end: span 1;
+	}
+}
+
 </style>
-<section class="lp-header-estacao estacao_solar">
 
-    <div class="grid">
-        <div class="half-column header-text">
-            <div class="main-text">
-                <div class="main-text-svg">
 
-                    <picture>
-                        <img class="text-svg"
-                            src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/estacao_solar_header_text.svg"
-                            alt="" srcset="">
-                    </picture>
+        <section class="lp-header">
+            <div class="grid">
+                <div class="half-column header-image">
+                    <img
+                        src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/header_Imaage_mudaki.jpg" />
+                </div>
+
+                <div class="half-column header-text">
+                    <div class="main-text">
+                        <div class="main-text-svg">
+
+                            <picture>
+                                <source
+                                    srcset="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/mudaki_text.svg"
+                                    media="(max-width: 767px)">
+                                <source
+                                    srcset="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/mudaki_text_2.svg"
+                                    media="(min-width: 768px)">
+                                <img class="text-svg"
+                                    src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/mudaki_text_2.svg"
+                                    alt="" srcset="">
+                            </picture>
+                            <!-- <img class="logo-svg" src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/kk_logo.svg" alt="" srcset=""> -->
+                        </div>
+                    </div>
+                    <!-- <button class="lp-primary">sabe mais</button> -->
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="lp-content lp-big-images">
+            <div class="lp-title-group">
+                <h2 class="lp-title">O Verão pode ser tudo, como vai ser o teu?</h2>
+                <p class="lp-subtitle">Em grande estilo e com muito conforto, a viajar para onde as leituras te levaram.
+                </p>
+            </div>
+
+            <div class="lp-images-group">
+                <a href="https://www.kuantokusta.pt/moda-acessorios"><img
+                        src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/moda-acessorios.png"></a>
+                <a href="https://www.kuantokusta.pt/livros"><img
+                        src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/cultura-lazer.png"></a>
+            </div>
+        </section>
+
+        <section class="lp-content lp-product-carrousel">
+            <div class="lp-title-group">
+                <h2 class="lp-title">Atira-te ao mar, salta para a piscina</h2>
+                <p class="lp-subtitle">Mas não fiques a secar!</p>
+            </div>
+            <div class="carrousel">
+                <a href="https://www.kuantokusta.pt/c/2724/toalhas-de-praia" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/prod_1.png">
+                    </div>
+                    <h4>Toalhas de praia</h4>
+                </a>
+                <a href="https://www.kuantokusta.pt/saude-beleza/Solares" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/produtos_saudebeleza/702197_3_la-roche-posay-anthelios-uvmune-fluido-sem-perfume-spf50-50ml.jpg">
+                    </div>
+                    <h4>Solares</h4>
+                </a>
+                <a href="https://www.kuantokusta.pt/c/695/brinquedos-e-acessorios-de-praia" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/produtos_brinquedospuericultura/297455_3_conjunto-de-praia-nordico.jpg">
+                    </div>
+                    <h4>Brinquedos de praia</h4>
+                </a>
+                <a href="https://www.kuantokusta.pt/c/464/geleiras-eletricas" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/produtos_electrodomesticos/489616_3_orbegozo-geleira-electrica-nv-4100.jpg">
+                    </div>
+                    <h4>Geladeiras</h4>
+                </a>
+            </div>
+        </section>
+
+        <section class="lp-content lp-big-images">
+            <div class="lp-title-group">
+                <h2 class="lp-title">Entra neste verão em grande estilo</h2>
+                <p class="lp-subtitle">Moda para Homem, Mulher e Criança aos melhores preços.</p>
+            </div>
+            <div class="lp-images-group">
+                <a href="https://www.kuantokusta.pt/moda-acessorios/Homem"><img
+                        src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/homem.png"></a>
+                <a href="https://www.kuantokusta.pt/moda-acessorios/Mulher"><img
+                        src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/mulher.png"></a>
+                <a href="https://www.kuantokusta.pt/moda-acessorios/Crianca-e-Bebe"><img
+                        src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/crianca.png"></a>
+            </div>
+        </section>
+
+        <section class="lp-content lp-product-carrousel">
+            <div class="lp-title-group">
+                <h2 class="lp-title">O Verão pode ser tudo, como vai ser o teu?</h2>
+                <p class="lp-subtitle">pequenino, com bolas, às riscas, de cores fortes. Tu escolhes!</p>
+            </div>
+            <div class="carrousel">
+                <a href="https://www.kuantokusta.pt/c/556/swimwear" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/p1.png">
+                    </div>
+                    <h4>Swimwear
+                        para Homem</h4>
+                </a>
+                <a href="https://www.kuantokusta.pt/c/529/fatos-de-banho-e-biquinis" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/p2.png">
+                    </div>
+                    <h4>Fatos de Banho
+                        e Biquínis</h4>
+                </a>
+                <a href="https://www.kuantokusta.pt/c/581/fatos-de-banho" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/p3.png">
+                    </div>
+                    <h4>Fatos de Banho
+                        Infantis</h4>
+                </a>
+                <a href="https://www.kuantokusta.pt/c/634/chinelos" class="lp-product-card">
+                    <div class="lp-product-image">
+                        <img
+                            src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/bola_de_berlim/p1.jpg">
+                    </div>
+                    <h4>Chinelos</h4>
+                </a>
+            </div>
+        </section>
+
+        <section class="lp-content lp-newsletter">
+            <div class="lp-newsletter-title">
+
+                <div class="title">
+                    <svg width="95" height="149" viewBox="0 0 95 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_0_1)">
+                            <path
+                                d="M22.5354 111.141L21.8774 83.9997H29.444C35.0367 83.9997 40.136 83.5062 44.7417 82.5192C49.3475 81.5323 53.0212 79.6132 55.7627 76.762C58.5042 73.9108 59.875 69.7437 59.875 64.2607C59.875 58.9969 58.2849 54.8846 55.1047 51.9238C51.9246 48.8533 47.7026 47.318 42.4389 47.318C36.9558 47.318 32.679 48.8533 29.6085 51.9238C26.538 54.8846 25.0027 58.9421 25.0027 64.0962H5.09924C4.98958 57.5165 6.41518 51.6496 9.37603 46.4956C12.3369 41.3415 16.6137 37.284 22.2064 34.3232C27.9088 31.3623 34.7078 29.8819 42.6034 29.8819C49.9507 29.8819 56.4207 31.2527 62.0134 33.9942C67.7158 36.7357 72.157 40.6835 75.3372 45.8376C78.627 50.882 80.272 57.0779 80.272 64.4252C80.272 71.9918 78.5722 78.2425 75.1727 83.1772C71.8829 88.112 67.3319 91.7856 61.5199 94.1982C55.8175 96.6107 49.183 97.8718 41.6164 97.9815L41.1229 111.141H22.5354ZM31.9114 148.151C28.0733 148.151 24.8931 146.945 22.3709 144.533C19.9583 142.12 18.7521 139.214 18.7521 135.815C18.7521 132.305 19.9583 129.345 22.3709 126.932C24.8931 124.519 28.0733 123.313 31.9114 123.313C35.7495 123.313 38.8749 124.519 41.2874 126.932C43.7 129.345 44.9062 132.305 44.9062 135.815C44.9062 139.214 43.7 142.12 41.2874 144.533C38.8749 146.945 35.7495 148.151 31.9114 148.151Z"
+                                fill="white" />
+                        </g>
+                        <path opacity="0.7"
+                            d="M33.4438 136.582L31.7812 137.541V148.289H35.1063V137.541L33.4441 136.582H33.4438ZM35.1063 121.035H31.7812V131.783L33.4438 132.743L35.1063 131.783V121.035Z"
+                            fill="white" />
+                        <path opacity="0.7"
+                            d="M22.4731 126.409L20.8105 129.288L30.1187 134.662L20.8105 140.036L22.4731 142.915L31.7809 137.541V135.622L30.1187 134.662L31.7809 133.702V131.783L22.4731 126.409Z"
+                            fill="white" />
+                        <path opacity="0.91"
+                            d="M31.7812 135.623V137.542L33.4438 136.582L31.7812 135.623ZM31.7812 131.784V133.703L33.4438 132.743L31.7812 131.784"
+                            fill="white" />
+                        <path opacity="0.7"
+                            d="M44.4136 126.409L35.1055 131.783V133.702L36.7952 134.678L35.1055 135.632V137.541L44.4136 142.915L46.0762 140.036H46.0759L36.768 134.662L46.0759 129.288L44.4136 126.409Z"
+                            fill="white" />
+                        <path opacity="0.91"
+                            d="M35.1076 135.633L34.2703 136.105L33.4453 136.582L35.1076 137.542V135.633ZM35.1076 131.783L33.4453 132.743L35.1076 133.703V131.783"
+                            fill="white" />
+                        <path opacity="0.91"
+                            d="M31.7814 133.702L30.1191 134.662L31.7814 135.622V133.702ZM35.1062 133.702V135.632L36.7959 134.677L35.1065 133.702"
+                            fill="white" />
+                        <path opacity="0.97"
+                            d="M33.4438 132.743L31.7812 133.703V135.622L33.4438 136.582L34.2691 136.106L35.106 135.633V133.703L33.4438 132.743Z"
+                            fill="white" />
+                        <defs>
+                            <clipPath id="clip0_0_1">
+                                <rect width="94.7472" height="119.75" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h4>Ficaste a boiar</h4>
+                    <p>Subscreve as newsletters das poupanças.</p>
                 </div>
             </div>
-            <!-- <button class="lp-primary btn_center">sabe mais</button> -->
-        </div>
-
-        <div class="half-column header-image">
-            <img class="main-image" src="assets/estacao_solar/header-main.jpg" />
-            <img class="floating-logo" src="assets/estacao_solar/kk_logo.svg" />
-        </div>
-    </div>
-
-</section>
-
-
-<section class="lp-content lp-grid-images">
-    <div class="lp-title-group">
-        <h2 class="lp-title">A cor que te fica bem</h2>
-        <p class="lp-subtitle">Não torres ao sol.</p>
-    </div>
-
-    <div class="lp-images-group">
-        <a class="big-image" href="https://www.kuantokusta.pt/c/1375/protectores-solares"><img
-                src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/protetores_solares.png"></a>
-        <a class="small-image" href="https://www.kuantokusta.pt/c/1373/after-sun"><img
-                src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/after_sun.png"></a>
-        <a class="small-image" href="https://www.kuantokusta.pt/c/1374/autobronzeadores"><img
-                src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/auto_bronzeador.png"></a>
-    </div>
-</section>
-
-<section class="lp-content lp-product-carrousel">
-    <div class="lp-title-group">
-        <h2 class="lp-title">Os mais hot da estação</h2>
-        <p class="lp-subtitle">Encontra o teu brilho nesta estação.</p>
-    </div>
-    <div class="carrousel">
-        <a href="https://www.kuantokusta.pt/c/1373/after-sun/f/2339/creme-corporal" class="lp-product-card">
-            <div class="lp-product-image">
-                <img
-                    src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/p1.png">
+            <div class="lp-newsletter-form">
+                <script type="text/javascript" id="script_1e1Le2BVYe31xxdq0W1e8f165d2d">
+                    var _egoiLoaderMulti = _egoiLoaderMulti || [];
+                    var _egoiLoaderValues = [];
+                    _egoiLoaderValues.push(["_setForm", "1e1Le2BVYe31xxdq0W1e8f165d2d"]);
+                    _egoiLoaderValues.push(["_setResource", "12adbc7220d4c958a5d925b0e5148560"]);
+                    _egoiLoaderValues.push(["_setUrl", "https://32.e-goi.com/"]);
+                    _egoiLoaderValues.push(["_setType", "normal"]);
+                    _egoiLoaderValues.push(["_setWidth", "350"]);
+                    _egoiLoaderValues.push(["_setHeight", "275"]);
+                    _egoiLoaderMulti.push(_egoiLoaderValues);
+                    (function () {
+                        var egoi = document.createElement("script"); egoi.type = "text/javascript"; egoi.async = true;
+                        egoi.src = "https://32.e-goi.com/include/javascript/egoi.js";
+                        var e = document.getElementById("script_1e1Le2BVYe31xxdq0W1e8f165d2d"); e.parentNode.insertBefore(egoi, e);
+                    })();
+                </script>
+                <div id="a1e1Le2BVYe31xxdq0W1e8f165d2d"></div>
             </div>
-            <h4>After Sun em
-                Gel Corporal</h4>
-        </a>
-        <a href="https://www.kuantokusta.pt/c/1374/autobronzeadores/f/2339/creme-corporal" class="lp-product-card">
-            <div class="lp-product-image">
-                <img
-                    src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/p2.png">
-            </div>
-            <h4>Autobronzeadores
-                em Creme Corporal</h4>
-        </a>
-        <a href="https://www.kuantokusta.pt/c/1375/protectores-solares/f/2544/gel-corporal" class="lp-product-card">
-            <div class="lp-product-image">
-                <img
-                    src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/p3.png">
-            </div>
-            <h4>Protetores Solares
-                em Gel Corporal</h4>
-        </a>
-        <a href="https://www.kuantokusta.pt/c/1373/after-sun/f/2339/creme-corporal" class="lp-product-card">
-            <div class="lp-product-image">
-                <img
-                    src="https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/estacao_solar/p4.png">
-            </div>
-            <h4>After Sun em
-                Creme Corporal</h4>
-        </a>
-    </div>
-</section>
-
-<section class="lp-content lp-newsletter">
-    <div class="lp-newsletter-title">
-
-        <div class="title">
-            <svg width="95" height="149" viewBox="0 0 95 149" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_0_1)">
-                    <path
-                        d="M22.5354 111.141L21.8774 83.9997H29.444C35.0367 83.9997 40.136 83.5062 44.7417 82.5192C49.3475 81.5323 53.0212 79.6132 55.7627 76.762C58.5042 73.9108 59.875 69.7437 59.875 64.2607C59.875 58.9969 58.2849 54.8846 55.1047 51.9238C51.9246 48.8533 47.7026 47.318 42.4389 47.318C36.9558 47.318 32.679 48.8533 29.6085 51.9238C26.538 54.8846 25.0027 58.9421 25.0027 64.0962H5.09924C4.98958 57.5165 6.41518 51.6496 9.37603 46.4956C12.3369 41.3415 16.6137 37.284 22.2064 34.3232C27.9088 31.3623 34.7078 29.8819 42.6034 29.8819C49.9507 29.8819 56.4207 31.2527 62.0134 33.9942C67.7158 36.7357 72.157 40.6835 75.3372 45.8376C78.627 50.882 80.272 57.0779 80.272 64.4252C80.272 71.9918 78.5722 78.2425 75.1727 83.1772C71.8829 88.112 67.3319 91.7856 61.5199 94.1982C55.8175 96.6107 49.183 97.8718 41.6164 97.9815L41.1229 111.141H22.5354ZM31.9114 148.151C28.0733 148.151 24.8931 146.945 22.3709 144.533C19.9583 142.12 18.7521 139.214 18.7521 135.815C18.7521 132.305 19.9583 129.345 22.3709 126.932C24.8931 124.519 28.0733 123.313 31.9114 123.313C35.7495 123.313 38.8749 124.519 41.2874 126.932C43.7 129.345 44.9062 132.305 44.9062 135.815C44.9062 139.214 43.7 142.12 41.2874 144.533C38.8749 146.945 35.7495 148.151 31.9114 148.151Z"
-                        fill="white" />
-                </g>
-                <path opacity="0.7"
-                    d="M33.4438 136.582L31.7812 137.541V148.289H35.1063V137.541L33.4441 136.582H33.4438ZM35.1063 121.035H31.7812V131.783L33.4438 132.743L35.1063 131.783V121.035Z"
-                    fill="white" />
-                <path opacity="0.7"
-                    d="M22.4731 126.409L20.8105 129.288L30.1187 134.662L20.8105 140.036L22.4731 142.915L31.7809 137.541V135.622L30.1187 134.662L31.7809 133.702V131.783L22.4731 126.409Z"
-                    fill="white" />
-                <path opacity="0.91"
-                    d="M31.7812 135.623V137.542L33.4438 136.582L31.7812 135.623ZM31.7812 131.784V133.703L33.4438 132.743L31.7812 131.784"
-                    fill="white" />
-                <path opacity="0.7"
-                    d="M44.4136 126.409L35.1055 131.783V133.702L36.7952 134.678L35.1055 135.632V137.541L44.4136 142.915L46.0762 140.036H46.0759L36.768 134.662L46.0759 129.288L44.4136 126.409Z"
-                    fill="white" />
-                <path opacity="0.91"
-                    d="M35.1076 135.633L34.2703 136.105L33.4453 136.582L35.1076 137.542V135.633ZM35.1076 131.783L33.4453 132.743L35.1076 133.703V131.783"
-                    fill="white" />
-                <path opacity="0.91"
-                    d="M31.7814 133.702L30.1191 134.662L31.7814 135.622V133.702ZM35.1062 133.702V135.632L36.7959 134.677L35.1065 133.702"
-                    fill="white" />
-                <path opacity="0.97"
-                    d="M33.4438 132.743L31.7812 133.703V135.622L33.4438 136.582L34.2691 136.106L35.106 135.633V133.703L33.4438 132.743Z"
-                    fill="white" />
-                <defs>
-                    <clipPath id="clip0_0_1">
-                        <rect width="94.7472" height="119.75" fill="white" />
-                    </clipPath>
-                </defs>
-            </svg>
-            <h4>Perdeste o teu lugar ao sol?</h4>
-            <p>Subscreve as newsletters das poupanças.</p>
-        </div>
-    </div>
-    <div class="lp-newsletter-form">
-        <script type="text/javascript" id="script_1e1Le2BVYe31xxdq0W1e8f165d2d">
-            var _egoiLoaderMulti = _egoiLoaderMulti || [];
-            var _egoiLoaderValues = [];
-            _egoiLoaderValues.push(["_setForm", "1e1Le2BVYe31xxdq0W1e8f165d2d"]);
-            _egoiLoaderValues.push(["_setResource", "12adbc7220d4c958a5d925b0e5148560"]);
-            _egoiLoaderValues.push(["_setUrl", "https://32.e-goi.com/"]);
-            _egoiLoaderValues.push(["_setType", "normal"]);
-            _egoiLoaderValues.push(["_setWidth", "350"]);
-            _egoiLoaderValues.push(["_setHeight", "275"]);
-            _egoiLoaderMulti.push(_egoiLoaderValues);
-            (function () {
-                var egoi = document.createElement("script"); egoi.type = "text/javascript"; egoi.async = true;
-                egoi.src = "https://32.e-goi.com/include/javascript/egoi.js";
-                var e = document.getElementById("script_1e1Le2BVYe31xxdq0W1e8f165d2d"); e.parentNode.insertBefore(egoi, e);
-            })();
-        </script>
-        <div id="a1e1Le2BVYe31xxdq0W1e8f165d2d"></div>
-    </div>
-</section>
+        </section>
