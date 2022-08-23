@@ -1,0 +1,81 @@
+<html xmlns='http://www.w3.org/1999/xhtml'>
+
+    <head>
+        <title>PAYBYRD FORM</title>
+
+        <!-- <script>
+            onLoadFrame = function () {
+                document.body.style.overflow = 'hidden';
+
+                const wn = document.getElementById('pb-hf-ifrm').contentWindow;
+                wn.postMessage({
+                    redirectUrl: null,
+                    locale: 'pt-PT',
+                    orderId: 'test',
+                    checkoutKey: 'key',
+                    // theme: {
+                    //     backgroundColor: paybyrd_params.hfBackgroundColor,
+                    //     formBackgroundColor: paybyrd_params.hfFormBackgroundColor,
+                    //     primaryColor: paybyrd_params.hfPrimaryColor,
+                    //     textColor: paybyrd_params.hfTextColor
+                    // },
+                    autoRedirect: true,
+                    showCancelButton: false
+                }, 'https://checkout.paybyrd.com');
+            }
+        </script> -->
+    </head>
+    <div>
+        <!-- <iframe onload="onLoadFrame()" src="https://checkout.paybyrd.com" width="50%" height="50%"
+            style="border: none;position: fixed;"></iframe> -->
+    </div>
+
+    <script>
+        (function () {
+            function initHostedForm(data) {
+                const container = document.createElement('DIV');
+                container.style.width = '100%';
+                container.style.height = '100vh';
+
+                const iframe = document.createElement('IFRAME');
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.style.position = 'fixed';
+                iframe.style.zIndex = 999999;
+                iframe.style.top = 0;
+                iframe.style.left = 0;
+                iframe.id = 'pb-hf-ifrm';
+                // Prod
+                iframe.src = 'https://checkout.paybyrd.com';
+                iframe.onload = function () {
+                    document.body.style.overflow = 'hidden';
+
+                    const wn = document.getElementById('pb-hf-ifrm').contentWindow;
+                    wn.postMessage(data, 'https://checkout.paybyrd.com');
+                }
+
+                container.append(iframe);
+                document.body.append(container);
+            }
+
+            const paybyrd_params = { "orderDate": "2022-08-08T09:28:06Z", "expiresAt": "2022-08-09T09:28:06Z", "status": "created", "checkoutUrl": "https://link.paybyrd.com/chk_Or7HxnI8B", "index": 1, "transactions": [], "orderId": "f8af0638-bac1-4f34-8a18-9dcb7af56d56", "amount": "100.00", "currency": "EUR", "orderRef": "TESTE#3", "orderOptions": { "redirectUrl": "https://paybyrd.com/", "culture": "en-US" }, "paymentOptions": { "useSimulated": true, "cardOptions": { "isPreAuth": false }, "tokenOptions": { "tokenizationMethod": "none" } }, "terminalOptions": { "notifyChanges": false }, "code": "BYRD200", "description": "Operation successfully completed", "tags": 0, "checkoutKey": "eyJPcmRlcklkIjoiZjhhZjA2MzgtYmFjMS00ZjM0LThhMTgtOWRjYjdhZjU2ZDU2IiwiT3JkZXJSZWYiOiJURVNURSMzIiwiUGVyc29uSWQiOjE0NSwiTGl2ZSI6ZmFsc2UsIkVudGl0eUlkIjoiZjhhZjA2MzgtYmFjMS00ZjM0LThhMTgtOWRjYjdhZjU2ZDU2IiwiQW1vdW50IjoiMTAwLjAwIiwiQ3VycmVuY3kiOiJFVVIifQ==", "splitPayments": [{ "isoAmount": 4000, "merchantId": "abc123" }, { "isoAmount": 1500, "merchantId": "dfg567" }, { "isoAmount": 4500, "merchantId": "xyz987" }] };
+
+            initHostedForm({
+                redirectUrl: paybyrd_params.redirectUrl,
+                locale: paybyrd_params.locale,
+                orderId: paybyrd_params.orderId,
+                checkoutKey: paybyrd_params.checkoutKey,
+                theme: {
+                    backgroundColor: paybyrd_params.hfBackgroundColor,
+                    formBackgroundColor: paybyrd_params.hfFormBackgroundColor,
+                    primaryColor: paybyrd_params.hfPrimaryColor,
+                    textColor: paybyrd_params.hfTextColor,
+                },
+                autoRedirect: true,
+                showCancelButton: false,
+            });
+        })();
+    </script>
+
+</html>

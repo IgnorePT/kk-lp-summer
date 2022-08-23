@@ -1,0 +1,248 @@
+.lp-header-estacao {
+    overflow: hidden;
+    margin-bottom: 100px;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 88px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+
+        .header-text {
+            justify-self: end;
+            align-self: center;
+            padding: 25px 25px 25px 80px;
+
+            @media screen and (max-width: 767px) {
+                padding: 70px 25px 40px;
+                width: 100%;
+            }
+
+            .main-text {
+                margin-bottom: 52px;
+
+                .main-text-svg {
+                    picture {
+                        width: 100%;
+                        display: flex;
+                        justify-content: end;
+
+                        @media screen and (max-width: 767px) {
+                            justify-content: center;
+                        }
+
+                    }
+                }
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    &.estacao_solar {
+        background: $blue;
+    }
+
+    .header-image {
+        position: relative;
+
+        .floating-logo {
+            top: 3%;
+            left: 0;
+            position: absolute;
+            transform: translateX(-50%);
+            max-width: 20%;
+
+            @media screen and (max-width: 767px) {
+                max-width: 156px;
+                top: auto;
+                bottom: 0;
+                left: auto;
+                right: 0;
+                transform: translateY(50%);
+            }
+        }
+
+        .main-image {
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+        @media screen and (max-width: 767px) {
+            order: -1;
+        }
+    }
+}
+
+.lp-header-bola-berlim {
+    overflow: hidden;
+    margin-bottom: 100px;
+    background: $green;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 88px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 0.6fr 0.4fr;
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+
+        .header-text {
+            justify-self: start;
+            align-self: center;
+            padding: 70px 65px 50px;
+
+            @media screen and (max-width: 767px) {
+                padding: 70px 25px 40px;
+                width: 100%;
+            }
+
+            .main-text {
+                margin-bottom: 52px;
+
+                .main-text-svg {
+                    picture {
+                        width: 100%;
+                        display: flex;
+                        justify-content: start;
+
+                        @media screen and (max-width: 767px) {
+                            justify-content: center;
+                        }
+
+                    }
+                }
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .header-image {
+        position: relative;
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 304px;
+        }
+    }
+}
+
+.lp-header {
+    width: 100%;
+    margin-bottom: 100px;
+    background: $linear-blue;
+    position: relative;
+    overflow: hidden;
+
+
+
+    @media screen and (max-width: 767px) {
+        background-size: 150%;
+        background-position: left bottom;
+    }
+
+
+    .grid {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1440px;
+        // min-height: 689px;
+        margin: 0 auto;
+
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+
+    .header-image {
+        // background: url(../assets/mudaki/header_Imaage_mudaki.jpg);
+        // background-size: contain;
+        // background-position: bottom;
+        height: 100%;
+        // background-repeat: no-repeat;
+
+        @media screen and (max-width: 767px) {
+            order: 2;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &::after {
+        content: '';
+        background: url(https://s1.kuantokusta.pt/img_upload/Repository/paginas-publicas/campanha-praia-2022/mudaki/waves_slice.svg);
+        background-size: contain;
+        position: absolute;
+        bottom: 0;
+        left: -20px;
+        width: 120%;
+        height: 15%;
+        mix-blend-mode: multiply;
+    }
+
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 88px;
+        flex-direction: column;
+    }
+
+    .header-text {
+        justify-self: start;
+
+
+        @media screen and (max-width: 767px) {
+            justify-self: center;
+        }
+
+
+        .main-text {
+            display: block;
+            position: relative;
+
+
+            @media screen and (max-width: 767px) {
+                padding: 25px 15px 0;
+            }
+
+            .main-text-svg {
+                .text-svg {
+                    margin: 0 auto;
+                    max-width: 100%;
+                }
+
+                .logo-svg {
+                    position: absolute;
+                    top: -160px;
+                    right: 0;
+                }
+            }
+
+        }
+    }
+}

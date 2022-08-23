@@ -24,3 +24,13 @@ h6 {
 p {
     font-family: $DM-Sans;
 }
+
+.btn {
+    font-family: $DM-Sans;
+    padding: 20px 46px;
+    background: $primary;
+    color: $white;
+    border-radius: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
